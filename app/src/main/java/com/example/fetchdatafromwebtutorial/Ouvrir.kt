@@ -19,7 +19,8 @@ class Ouvrir : AppCompatActivity() {
         Thread {
             val socket = Socket(host, port)
             try {
-                val message = "Bonjour, serveur!"
+                val message = "Ouvrir le Portail"
+                println(message)
 
                 val outputStream: OutputStream = socket.getOutputStream()
                 outputStream.write(message.toByteArray())

@@ -95,16 +95,18 @@ class Gererplaque : AppCompatActivity() {
 
             buttonModifier.setOnClickListener {
 
-                val intent = Intent(this, ModifierPlaqueUtilisateur::class.java)
+            val intent = Intent(this, ModifierPlaqueUtilisateur::class.java)
                 startActivity(intent)
                 return@setOnClickListener
             }
+
             buttonAjouter.setOnClickListener {
 
                 val intent = Intent(this, AjouterPlaqueUtilisateur::class.java)
                 startActivity(intent)
                 return@setOnClickListener
             }
+
             buttonSupprimer.setOnClickListener {
 
                 val intent = Intent(this, SupprimerPlaqueUtilisateur::class.java)

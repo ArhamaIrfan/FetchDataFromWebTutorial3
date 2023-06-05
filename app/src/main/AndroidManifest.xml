@@ -63,6 +63,7 @@
         <activity android:name=".AjouterPlaqueUtilisateur" />
         <activity android:name=".Ouvrir" />
         <activity android:name=".Reussie3" />
+        <activity android:name=".SupprimerPlaqueAdministrateur" />
 
 
     </application>

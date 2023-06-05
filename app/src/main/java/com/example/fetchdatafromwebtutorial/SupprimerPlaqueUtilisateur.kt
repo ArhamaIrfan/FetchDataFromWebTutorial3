@@ -28,8 +28,6 @@ class SupprimerPlaqueUtilisateur : AppCompatActivity(), AdapterView.OnItemSelect
             val url = URL("https://89664529-4f7d-4aa4-bdd7-1a48c9bb8a88.mock.pstmn.io/utilisateurs")
             val connection = url.openConnection() as HttpsURLConnection
 
-            connection.requestMethod = "GET"
-
             if (connection.responseCode == 200) {
                 val inputSystem = connection.inputStream
                 val inputStreamReader = InputStreamReader(inputSystem, "UTF-8")
@@ -42,34 +40,7 @@ class SupprimerPlaqueUtilisateur : AppCompatActivity(), AdapterView.OnItemSelect
                 }
                 println("Connection Success")
             } else {
-                println("Connection failed")
-            }
-        }
-    }
-
-    private fun fetchData2(): Thread {
-        return Thread {
-            val url = URL("https://89664529-4f7d-4aa4-bdd7-1a48c9bb8a88.mock.pstmn.io/utilisateurs")
-            val connection = url.openConnection() as HttpsURLConnection
-            connection.requestMethod = "DELETE"
-            if (connection.responseCode == 200) {
-                val inputSystem = connection.inputStream
-                val inputStreamReader = InputStreamReader(inputSystem, "UTF-8")
-                val resp = Gson().fromJson(inputStreamReader, Request2::class.java)
-
-                inputStreamReader.close()
-                inputSystem.close()
-                runOnUiThread {
-
-                }
-                val gson = Gson()
-                val respJson = gson.toJson(resp)
-
-                val intent = Intent(this, Reussie3::class.java)
-                intent.putExtra("reponse", respJson)
-                startActivity(intent)
-            } else {
-                println("Connection failed")
+                println("Failed Connection")
             }
         }
     }
@@ -123,5 +94,32 @@ class SupprimerPlaqueUtilisateur : AppCompatActivity(), AdapterView.OnItemSelect
 
     override fun onNothingSelected(parent: AdapterView<*>) {
         // Do nothing here, as this function is not used
+    }
+
+    private fun fetchData2(): Thread {
+        return Thread {
+            val url = URL("https://89664529-4f7d-4aa4-bdd7-1a48c9bb8a88.mock.pstmn.io/utilisateurs")
+            val connection = url.openConnection() as HttpsURLConnection
+            connection.requestMethod = "DELETE"
+            if (connection.responseCode == 200) {
+                val inputSystem = connection.inputStream
+                val inputStreamReader = InputStreamReader(inputSystem, "UTF-8")
+                val request = Gson().fromJson(inputStreamReader, Request2::class.java)
+
+                inputStreamReader.close()
+                inputSystem.close()
+                runOnUiThread {
+                    // Perform any UI updates here if needed
+                }
+                val gson = Gson()
+                val respJson = gson.toJson(request)
+
+                val intent = Intent(this, Reussie3::class.java)
+                intent.putExtra("reponse", respJson)
+                startActivity(intent)
+            } else {
+                println("Connection failed")
+            }
+        }
     }
 }

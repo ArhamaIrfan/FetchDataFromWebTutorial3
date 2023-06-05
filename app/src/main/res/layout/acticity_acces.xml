@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gererAcces"
+    tools:context=".GererAcces"
     android:background='@color/purple_700'
     >
 
@@ -24,27 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="344dp">
 
+
             <Button
                 android:id="@+id/button2"
-                android:layout_width="150dp"
-                android:layout_height="60dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="131dp"
-                android:layout_marginLeft="111dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="92dp"
-                android:layout_marginRight="111dp"
-                android:backgroundTint="@color/black"
-                android:text="Ajouter"
-                android:textColor="@color/white">
-
-
-            </Button>
-
-            <Button
-                android:id="@+id/button4"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_alignParentStart="true"

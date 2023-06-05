@@ -9,22 +9,16 @@ class GererAcces : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.acticity_acces)
+        setContentView(R.layout.administrateur_acces)
 
-
-        val button2 = findViewById<Button>(R.id.button2)
-        button2.setOnClickListener {
-            val intent = Intent(applicationContext, MainReussie::class.java)
+        val modifier = findViewById<Button>(R.id.button2)
+        modifier.setOnClickListener {
+            val intent = Intent(applicationContext, ModifierPlaqueAdministrateur::class.java)
             startActivity(intent)
         }
-        val button4 = findViewById<Button>(R.id.button4)
-        button4.setOnClickListener {
-            val intent = Intent(applicationContext, MainReussie::class.java)
-            startActivity(intent)
-        }
-        val button6 = findViewById<Button>(R.id.button6)
-        button6.setOnClickListener {
-            val intent = Intent(applicationContext, MainReussie::class.java)
+        val supprimer = findViewById<Button>(R.id.button6)
+        supprimer.setOnClickListener {
+            val intent = Intent(applicationContext, SupprimerPlaqueAdministrateur::class.java)
             startActivity(intent)
         }
     }
