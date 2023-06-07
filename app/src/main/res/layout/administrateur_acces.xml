@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Administrateur_acces"
-    android:background='@color/purple_700'
+    android:background='@color/teal_700'
     >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="500dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="25sp"
         app:cardElevation="50sp"
@@ -24,6 +24,17 @@
             android:layout_width="match_parent"
             android:layout_height="344dp">
 
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:padding="15dp" />
+
 
             <Button
                 android:id="@+id/button2"
@@ -32,10 +43,10 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="139dp"
+                android:layout_marginStart="149dp"
                 android:layout_marginLeft="111dp"
-                android:layout_marginTop="106dp"
-                android:layout_marginEnd="85dp"
+                android:layout_marginTop="104dp"
+                android:layout_marginEnd="77dp"
                 android:layout_marginRight="111dp"
                 android:backgroundTint="@color/black"
                 android:text="Modifier"
@@ -51,10 +62,10 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="139dp"
+                android:layout_marginStart="146dp"
                 android:layout_marginLeft="111dp"
-                android:layout_marginTop="188dp"
-                android:layout_marginEnd="85dp"
+                android:layout_marginTop="183dp"
+                android:layout_marginEnd="78dp"
                 android:layout_marginRight="111dp"
                 android:backgroundTint="@color/black"
                 android:text="Supprimer"
@@ -63,6 +74,24 @@
 
             </Button>
 
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="146dp"
+                android:layout_marginLeft="111dp"
+                android:layout_marginTop="253dp"
+                android:layout_marginEnd="78dp"
+                android:layout_marginRight="111dp"
+                android:backgroundTint="@color/black"
+                android:text="Ajouter"
+                android:textColor="@color/white">
+
+
+            </Button>
 
         </RelativeLayout>
 

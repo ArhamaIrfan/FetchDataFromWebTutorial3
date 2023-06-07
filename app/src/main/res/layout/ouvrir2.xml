@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainRater"
+    tools:context=".Ouvrir2"
     android:background='@color/teal_700'
     >
 
@@ -27,46 +27,15 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Echec"
-                android:textColor="@color/black"
-                android:textSize="25sp"></TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="15dp"
                 android:gravity="center"
-                android:text="Identifiant ou mot de passe saisi incorretce"
+                android:text=" Ouvert"
                 android:textColor="@color/black"
                 android:textSize="20sp"></TextView>
 
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="150dp"
-                android:layout_height="60dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="131dp"
-                android:layout_marginLeft="111dp"
-                android:layout_marginTop="130dp"
-                android:layout_marginEnd="92dp"
-                android:layout_marginRight="111dp"
-                android:backgroundTint="@color/black"
-                android:text="Se Deconnecter"
-                android:textColor="@color/white">
-
-
-            </Button>
-
-
         </RelativeLayout>
-
 
 
     </androidx.cardview.widget.CardView>

@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GererAcces"
-    android:background='@color/purple_700'
+    android:background='@color/teal_700'
     >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="350dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="25sp"
         app:cardElevation="50sp"
@@ -50,7 +50,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="131dp"
                 android:layout_marginLeft="111dp"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="165dp"
                 android:layout_marginEnd="92dp"
                 android:layout_marginRight="111dp"
                 android:backgroundTint="@color/black"
@@ -59,6 +59,37 @@
 
 
             </Button>
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="131dp"
+                android:layout_marginLeft="111dp"
+                android:layout_marginTop="230dp"
+                android:layout_marginEnd="92dp"
+                android:layout_marginRight="111dp"
+                android:backgroundTint="@color/black"
+                android:text="Ajouter"
+                android:textColor="@color/white">
+
+
+            </Button>
+            <TextView
+                android:id="@+id/myTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Select "
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
 
 
 

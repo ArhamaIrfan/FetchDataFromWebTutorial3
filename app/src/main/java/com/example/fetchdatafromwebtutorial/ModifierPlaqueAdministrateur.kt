@@ -72,21 +72,23 @@ class ModifierPlaqueAdministrateur : AppCompatActivity(), AdapterView.OnItemSele
         }.start()
     }
     private fun updatePlaque(userList: List<Request>) {
+        val recue=intent.getStringExtra("reponse")
         val items = mutableListOf<String>()
 
         for (user in userList) {
-            items.add("ID: ${user.id}")
-            items.add("Username: ${user.username}")
-            items.add("Password: ${user.mdp}")
-            items.add("Status: ${user.status}")
-            items.add("Plaque 1: ${user.plaque1}")
-            items.add("Plaque 2: ${user.plaque2}")
-            items.add("Plaque 3: ${user.plaque3}")
-            items.add("Plaque 4: ${user.plaque4}")
-            items.add("Plaque 5: ${user.plaque5}")
-            break
+            if(user.username==recue) {
+                items.add("ID: ${user.id}")
+                items.add("Username: ${user.username}")
+                items.add("Password: ${user.mdp}")
+                items.add("Status: ${user.status}")
+                items.add("Plaque 1: ${user.plaque1}")
+                items.add("Plaque 2: ${user.plaque2}")
+                items.add("Plaque 3: ${user.plaque3}")
+                items.add("Plaque 4: ${user.plaque4}")
+                items.add("Plaque 5: ${user.plaque5}")
+                break
 
-
+            }
         }
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, items)
@@ -97,23 +99,20 @@ class ModifierPlaqueAdministrateur : AppCompatActivity(), AdapterView.OnItemSele
     }
 
 
-        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            val selectedItem = parent?.getItemAtPosition(position)?.toString()
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        val selectedItem = parent?.getItemAtPosition(position)?.toString()
 
-            val myTextView: TextView = findViewById(R.id.myTextView)
-            myTextView.text = selectedItem
+        val myTextView: TextView = findViewById(R.id.myTextView)
+        myTextView.text = selectedItem
 
-            val buttonModifier = findViewById<Button>(R.id.modifier)
-            buttonModifier.setOnClickListener {
-                fetchData2()
-            }
+        val buttonModifier = findViewById<Button>(R.id.modifier)
+        buttonModifier.setOnClickListener {
+            fetchData2()
         }
+    }
 
-        override fun onNothingSelected(parent: AdapterView<*>?) {
-            // Do nothing here, as this function is not used
-        }
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        // Do nothing here, as this function is not used
+    }
 
 }
-
-
-

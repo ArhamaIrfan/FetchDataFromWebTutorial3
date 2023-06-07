@@ -18,7 +18,7 @@ class MainReussie2 : AppCompatActivity() {
         }
         val button4 = findViewById<Button>(R.id.button4)
         button4.setOnClickListener {
-            val intent = Intent(applicationContext, GererAcces::class.java)
+            val intent = Intent(applicationContext, Administrateur_acces::class.java)
             startActivity(intent)
         }
         val button6 = findViewById<Button>(R.id.button6)

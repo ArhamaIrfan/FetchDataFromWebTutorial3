@@ -40,7 +40,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="10dp"
-                android:hint="plaque"
+                android:hint="Saisir la nouvelle données"
                 android:padding="10dp"></EditText>
 
 

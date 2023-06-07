@@ -61,7 +61,7 @@ class ModifierPlaqueUtilisateur : AppCompatActivity(), AdapterView.OnItemSelecte
                 inputStreamReader.close()
                 inputSystem.close()
                 runOnUiThread {
-                    // Perform any UI updates here if needed
+                    // Effectuer ici les mises à jour de l'interface utilisateur si nécessaire
                 }
                 val gson = Gson()
                 val respJson = gson.toJson(request)
@@ -77,28 +77,28 @@ class ModifierPlaqueUtilisateur : AppCompatActivity(), AdapterView.OnItemSelecte
 
     private fun updatePlaque(userList: List<Request>) {
         val items = mutableListOf<String>()
+        var count=0
+
 
         for (user in userList) {
-            val plaque1 = user.plaque1
-            val plaque2 = user.plaque2
-            val plaque3 = user.plaque3
-            val plaque4 = user.plaque4
-            val plaque5 = user.plaque5
+            var nbplaque=0
+            val plaques = listOf(user.plaque1, user.plaque2, user.plaque3, user.plaque4, user.plaque5)
+            for (plaque in plaques) {
+                if (plaque != null) {
+                    nbplaque++ // Incrémenter le compteur pour chaque plaque non nulle
+                }
+            }
 
-            if (!plaque1.isNullOrEmpty()) {
-                items.add(plaque1)
+
+            for (plaque in plaques) {
+                if (plaque!=null && count <= nbplaque) {
+                    items.add(plaque)
+                    count++
+                }
             }
-            if (!plaque2.isNullOrEmpty()) {
-                items.add(plaque2)
-            }
-            if (!plaque3.isNullOrEmpty()) {
-                items.add(plaque3)
-            }
-            if (!plaque4.isNullOrEmpty()) {
-                items.add(plaque4)
-            }
-            if (!plaque5.isNullOrEmpty()) {
-                items.add(plaque5)
+
+            if (count >= 5) {
+                break
             }
         }
 
@@ -122,7 +122,7 @@ class ModifierPlaqueUtilisateur : AppCompatActivity(), AdapterView.OnItemSelecte
     }
 
     override fun onNothingSelected(parent: AdapterView<*>) {
-        // Do nothing here, as this function is not used
+        // Ne rien faire ici, car cette fonction n'est pas utilisée
     }
 
 }

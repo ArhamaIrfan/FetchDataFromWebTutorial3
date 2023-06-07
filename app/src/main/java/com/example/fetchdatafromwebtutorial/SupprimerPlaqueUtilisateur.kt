@@ -48,30 +48,31 @@ class SupprimerPlaqueUtilisateur : AppCompatActivity(), AdapterView.OnItemSelect
     private fun updatePlaque(userList: List<Request>) {
         val spinner: Spinner = findViewById(R.id.spinner)
         val items = mutableListOf<String>()
+        var count=0
+
 
         for (user in userList) {
-            val plaque1 = user.plaque1
-            val plaque2 = user.plaque2
-            val plaque3 = user.plaque3
-            val plaque4 = user.plaque4
-            val plaque5 = user.plaque5
+            var nbplaque=0
+            val plaques = listOf(user.plaque1, user.plaque2, user.plaque3, user.plaque4, user.plaque5)
+            for (plaque in plaques) {
+                if (plaque != null) {
+                    nbplaque++ // Incrémenter le compteur pour chaque plaque non nulle
+                }
+            }
 
-            if (!plaque1.isNullOrEmpty()) {
-                items.add(plaque1)
+
+            for (plaque in plaques) {
+                if (plaque!=null && count <= nbplaque) {
+                    items.add(plaque)
+                    count++
+                }
             }
-            if (!plaque2.isNullOrEmpty()) {
-                items.add(plaque2)
-            }
-            if (!plaque3.isNullOrEmpty()) {
-                items.add(plaque3)
-            }
-            if (!plaque4.isNullOrEmpty()) {
-                items.add(plaque4)
-            }
-            if (!plaque5.isNullOrEmpty()) {
-                items.add(plaque5)
+
+            if (count >= 5) {
+                break
             }
         }
+
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, items)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

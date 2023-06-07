@@ -17,7 +17,8 @@ class MainReussie : AppCompatActivity() {
         setContentView(R.layout.activity_reussie)
         val recue=intent.getStringExtra("idtest")
 
-        //Recuperation de la valeur de MainActivity
+        val myText = findViewById<TextView>(R.id.test)
+        myText.text = "Bienvenue: ${recue}"
 
 
 

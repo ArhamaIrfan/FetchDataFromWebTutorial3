@@ -50,7 +50,7 @@ class Gererplaque : AppCompatActivity() {
             false // ajouter un indicateur pour savoir si l'utilisateur a été trouvé ou non
 
         for (user in userList) {
-            if (user.id.toString() == recue2) {
+            if (user.username.toString() == recue2) {
                 userFound = true // mettre l'indicateur à vrai
                 val dash = Array(6) { arrayOfNulls<String>(2) }
 

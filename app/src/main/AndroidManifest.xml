@@ -64,6 +64,14 @@
         <activity android:name=".Ouvrir" />
         <activity android:name=".Reussie3" />
         <activity android:name=".SupprimerPlaqueAdministrateur" />
+        <activity android:name=".Administrateur_acces" />
+        <activity android:name=".AjouterUtilisateur" />
+        <activity android:name=".Ouvrir2" />
+
+
+
+
+
 
 
     </application>

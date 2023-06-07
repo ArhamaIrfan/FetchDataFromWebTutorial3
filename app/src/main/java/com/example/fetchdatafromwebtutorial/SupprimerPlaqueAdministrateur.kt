@@ -46,21 +46,24 @@ class SupprimerPlaqueAdministrateur : AppCompatActivity(), AdapterView.OnItemSel
     }
 
     private fun updatePlaque(userList: List<Request>) {
+        val recue=intent.getStringExtra("reponse")
         val spinner: Spinner = findViewById(R.id.spinner)
         val items = mutableListOf<String>()
 
         for (user in userList) {
-            items.add("ID: ${user.id}")
-            items.add("Username: ${user.username}")
-            items.add("Password: ${user.mdp}")
-            items.add("Status: ${user.status}")
-            items.add("Plaque 1: ${user.plaque1}")
-            items.add("Plaque 2: ${user.plaque2}")
-            items.add("Plaque 3: ${user.plaque3}")
-            items.add("Plaque 4: ${user.plaque4}")
-            items.add("Plaque 5: ${user.plaque5}")
-            break
 
+            if(user.username==recue) {
+                items.add("ID: ${user.id}")
+                items.add("Username: ${user.username}")
+                items.add("Password: ${user.mdp}")
+                items.add("Status: ${user.status}")
+                items.add("Plaque 1: ${user.plaque1}")
+                items.add("Plaque 2: ${user.plaque2}")
+                items.add("Plaque 3: ${user.plaque3}")
+                items.add("Plaque 4: ${user.plaque4}")
+                items.add("Plaque 5: ${user.plaque5}")
+                break
+            }
         }
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, items)

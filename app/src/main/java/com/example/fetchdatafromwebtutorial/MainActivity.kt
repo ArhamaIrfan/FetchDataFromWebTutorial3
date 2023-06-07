@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
                 inputStreamReader.close()
                 inputSystem.close()
                 runOnUiThread {
+
                     updateForm(request)
                 }
                 binding.connexion.text = "Connection Success"
@@ -51,12 +52,12 @@ class MainActivity : AppCompatActivity() {
                 //Utilisateur
                 if ( (binding.identifiant.text.toString() == user.username) && (binding.mdp.text.toString() == user.mdp)  && (user.status == "utilisateur") ) {
 
-                    val idTest=user.id.toString()
+                    val usertest=user.username.toString()
 
                     //Passage d'une variable vers MainReussie
                     val intent= Intent(this , MainReussie::class.java)
-                    intent.putExtra("idtest",idTest)
-                    println(idTest)
+                    intent.putExtra("idtest",usertest)
+                    println(usertest)
 
 
 
